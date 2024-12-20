@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<odoo>
+    <record id="account_journal_form_ihnerit" model="ir.ui.view">
+        <field name="name">account.journal.inherited</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+        <field name="type" position="after">
+            <field name="fel_tipo_registro"/>
+            <field name="fel_tipo_fel"/>
+            <field name="fel_retencion_isr"/>
+        </field>
+            <page name="advanced_settings" position="after">
+                <page name="fel" string="Frases FEL">
+                    <field name="fel_frases" widget="section_and_note_many2many" mode="tree">
+                        <tree editable="botoom" string="Frases">
+                            <control>
+                                <create name="agrega_frase" string="Agrega Frase"/>
+                            </control>
+                            <field name="fel_frases_codigo_escenario"/>
+                            <field name="fel_frases_tipo_frase"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>

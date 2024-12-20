@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<odoo>
+    <record id="account_view_move_form_ihnerit" model="ir.ui.view">
+        <field name="name">account.view.inherited</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <button name="button_draft" position="after">
+                <field name="fel_certificado" invisible="1"/>
+                <field name="fel_tipo_registro" invisible="1"/>
+                <field name="state" invisible="1"/>
+                <button name="action_firma_fel" type="object" string="Firma FEL" class="oe_highlight"
+                        invisible="state in ('draft', 'cancelled') or fel_tipo_registro == 'No' or fel_certificado =='Certificado'"/> 
+            </button>
+            <group name="accounting_info_group" position="after">
+                <group string="Factura Electronica">
+                    <field name="fel_certificado"/>
+                    <field name="fel_url" widget='url' text="Ver documento Electronico"
+                           invisible="context.get('fel_certificado') == 'No certificado'"/>
+                    <field name="fel_uuid"/>
+                    <field name="fel_serie"/>
+                    <field name="fel_numero"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

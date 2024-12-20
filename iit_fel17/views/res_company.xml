@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+
+<odoo>
+    <record id="res_company_form_ihnerit" model="ir.ui.view">
+        <field name="name">res.company.inherited</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <page name="general_info" position="after">
+                <page name="fel" string="Factura Electronica">
+                    <group>
+                        <group string="Entorno">
+                            <field name="fel_entorno"/>
+                            <field name="fel_service"/>
+                            <field name="fel_url"/>
+                            <field name="fel_url_firma"/>
+                            <field name="fel_codigo_imp"/>
+                            <field name="fel_sep_codigo"/>
+                        </group>
+                        <group string="Para NIT-SAT">
+                            <field name="fel_emisor_codigo"/>
+                            <field name="fel_emisor_clave"/>
+                            <field name="fel_url_nit"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Firma">
+                            <field name="fel_UsuarioFirma"/>
+                            <field name="fel_LlaveFirma"/>
+                            <field name="fel_UsuarioApi"/>
+                            <field name="fel_LlaveApi"/>
+                        </group>
+                        <group string="Emisor">
+                            <field name="fel_codigo_establecimiento"/>
+                            <field name="fel_correo_emisor"/>
+                            <field name="fel_nit_emisor"/>
+                            <field name="fel_nombre_Comercial"/>
+                            <field name="fel_nombre_emisor"/>
+                            <field name="fel_direccion"/>
+                            <field name="fel_codigo_postal"/>
+                            <field name="fel_departamento"/>
+                            <field name="fel_municipio"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>

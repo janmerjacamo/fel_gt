@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Herencia del reporte existente -->
+    <template id="report_invoice_fel_uuid" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='row mt-3 mb-1']" position="before">
+            <t t-if="o.fel_url">
+                <p class="m-0">
+                    <a t-att-href="o.fel_url" target="_blank">Ver documento Electrónico</a>
+                </p>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
